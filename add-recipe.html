@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Add Recipe</title>
+</head>
+<body>
+
+  <h1>Add Your Recipe</h1>
+
+  <form action="#" method="post" id="recipe-form">
+
+    <!-- Recipe Name -->
+    <div>
+      <label for="recipe-name">Recipe Name:</label><br>
+      <input type="text" id="recipe-name" name="recipe-name" required>
+    </div><br>
+
+    <!-- Ingredients -->
+    <div>
+      <label for="ingredients">Ingredients:</label><br>
+      <textarea id="ingredients" name="ingredients" rows="4" required></textarea>
+    </div><br>
+
+    <!-- Cooking Instructions -->
+    <div>
+      <label for="instructions">Cooking Instructions:</label><br>
+      <textarea id="instructions" name="instructions" rows="6" required></textarea>
+    </div><br>
+
+    <!-- Image URL -->
+    <div>
+      <label for="image-url">Image URL:</label><br>
+      <input type="url" id="image-url" name="image-url">
+    </div><br>
+
+    <!-- Recipe Category -->
+    <div>
+      <label for="category">Recipe Category:</label><br>
+      <select id="category" name="category" required>
+        <option value="desserts">Desserts</option>
+        <option value="vegan">Vegan</option>
+        <option value="quick-meals">Quick Meals</option>
+        <option value="breakfast">Breakfast</option>
+        <option value="healthy">Healthy</option>
+      </select>
+    </div><br>
+
+    <!-- Submit Button -->
+    <div>
+      <button type="submit">Add Recipe</button>
+    </div>
+
+  </form>
+
+  <p><a href="index.html">← Back to Home</a></p>
+
+  <script>
+    // Form Validation
+    document.getElementById("recipe-form").addEventListener("submit", function(event) {
+      // Get form values
+      var name = document.getElementById("recipe-name").value;
+      var ingredients = document.getElementById("ingredients").value;
+      var instructions = document.getElementById("instructions").value;
+
+      // Check if required fields are filled out
+      if (name === "" || ingredients === "" || instructions === "") {
+        alert("Please fill out all required fields.");
+        event.preventDefault();  // Prevent form submission
+      }
+    });
+  </script>
+
+</body>
+</html>
